@@ -238,6 +238,7 @@ dependencies:
   - pyspider==0.3.9
   - redis==2.10.6
   - ruamel-yaml==0.11.14
+  - selenium==3.7.0
   - tables==3.4.2
   - u-msgpack-python==2.4.1
   - win-inet-pton==1.0.1
