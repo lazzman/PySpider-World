@@ -23,7 +23,7 @@ conda env create -f conda-env.yml
 ```
 
 # 配置
-
+无
 
 # 运行
 
@@ -33,3 +33,16 @@ conda env create -f conda-env.yml
 activate python36
 ```
 
+运行PySpider
+
+```
+pyspider all
+```
+
+# pyspider目录
+
+用户爬虫代码保存在sqlite中
+目录为：用户目录下的data目录
+  project.db 保存了爬虫代码
+  task.db 保存了爬虫任务执行记录
+  result.db 保存了默认的返回结果
