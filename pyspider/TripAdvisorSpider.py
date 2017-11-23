@@ -15,7 +15,7 @@ class Handler(BaseHandler):
     crawl_config = {
     }
 
-    page_start = 0  # 默认第一页从0开始
+    page_start = 660  # 默认第一页从0开始
     page_step = 30  # 每一页递增30，即第2页是30
     next_url = None
     start_url = 'https://www.tripadvisor.cn/Search?ssrc=A&q=%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A&geo=&sid=09AB1DC3BE6ED9600006CDE422AFE8621511446534135&rf=0&actionType=updatePage&dist=undefined&o={}&ajax=search'.format(
@@ -27,7 +27,7 @@ class Handler(BaseHandler):
         self.crawl(self.start_url, callback=self.index_page)
 
     @config(
-        age=10 * 24 * 60 * 60)  # @config(age=10 * 24 * 60 * 60) 这个设置告诉scheduler（调度器）这个request（请求）过期时间是10天，10天内再遇到这个请求直接忽略。这个参数也可以在self.crawl(url, age=10*24*60*60) 和 crawl_config中设置。
+        age=60)  # @config(age=10 * 24 * 60 * 60) 这个设置告诉scheduler（调度器）这个request（请求）过期时间是10天，10天内再遇到这个请求直接忽略。这个参数也可以在self.crawl(url, age=10*24*60*60) 和 crawl_config中设置。
     def index_page(self, response):
         # def index_page(self, response) 这个方法获取一个Response对象。 response.doc是pyquery对象的一个扩展方法。pyquery是一个类似于jQuery的对象选择器。
         for each in response.doc('a[href^="http"]').items():  # response.doc
